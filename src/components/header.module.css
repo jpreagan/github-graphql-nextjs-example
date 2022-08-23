@@ -18,6 +18,8 @@
   list-style: none;
   text-align: center;
   white-space: nowrap;
+  max-width: 58.5em;
+  margin: 0 auto;
 }
 
 .list::-webkit-scrollbar {
