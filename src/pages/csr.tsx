@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import type { Repository } from "../types";
 import useSWR from "swr";
+import Header from "../components/header";
 import Card from "../components/card";
 
 interface ApiError extends Error {
@@ -41,6 +42,8 @@ const Csr: NextPage = () => {
         <title>Client-side rendering</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header />
 
       {data.map(
         ({

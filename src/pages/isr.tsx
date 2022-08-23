@@ -1,6 +1,7 @@
 import type { Repository } from "../types";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
+import Header from "../components/header";
 import Card from "../components/card";
 
 type IsrProps = {
@@ -14,6 +15,8 @@ const Isr = ({ data }: IsrProps) => {
         <title>Incremental static regeneration</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header />
 
       {data.map(
         ({

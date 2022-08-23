@@ -1,0 +1,46 @@
+.header {
+  padding: 0 1rem;
+}
+
+.title {
+  color: #24292f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 4rem 0 2rem;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list li + li {
+  margin-left: 0.5rem;
+}
+
+.list li + li:before {
+  content: "|";
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 28em) {
+  .title {
+    font-size: 1.85rem;
+  }
+}
+
+@media screen and (min-width: 39em) {
+  .title {
+    font-size: 2.7rem;
+  }
+}
