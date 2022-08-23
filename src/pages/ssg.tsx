@@ -2,6 +2,7 @@ import type { Repository } from "../types";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import Header from "../components/header";
+import Message from "../components/message";
 import Card from "../components/card";
 
 type SsgProps = {
@@ -18,27 +19,32 @@ const Ssg = ({ data }: SsgProps) => {
 
       <Header />
 
-      {data.map(
-        ({
-          id,
-          url,
-          name,
-          description,
-          primaryLanguage,
-          stargazerCount,
-          forkCount,
-        }) => (
-          <Card
-            key={id}
-            url={url}
-            name={name}
-            description={description}
-            primaryLanguage={primaryLanguage}
-            stargazerCount={stargazerCount}
-            forkCount={forkCount}
-          />
-        )
-      )}
+      <main>
+        <Message>This page was successfuly loaded using SSG!</Message>
+        <section>
+          {data.map(
+            ({
+              id,
+              url,
+              name,
+              description,
+              primaryLanguage,
+              stargazerCount,
+              forkCount,
+            }) => (
+              <Card
+                key={id}
+                url={url}
+                name={name}
+                description={description}
+                primaryLanguage={primaryLanguage}
+                stargazerCount={stargazerCount}
+                forkCount={forkCount}
+              />
+            )
+          )}
+        </section>
+      </main>
     </>
   );
 };

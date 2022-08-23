@@ -3,6 +3,7 @@ import Head from "next/head";
 import type { Repository } from "../types";
 import useSWR from "swr";
 import Header from "../components/header";
+import Message from "../components/message";
 import Card from "../components/card";
 
 interface ApiError extends Error {
@@ -45,27 +46,32 @@ const Csr: NextPage = () => {
 
       <Header />
 
-      {data.map(
-        ({
-          id,
-          url,
-          name,
-          description,
-          primaryLanguage,
-          stargazerCount,
-          forkCount,
-        }) => (
-          <Card
-            key={id}
-            url={url}
-            name={name}
-            description={description}
-            primaryLanguage={primaryLanguage}
-            stargazerCount={stargazerCount}
-            forkCount={forkCount}
-          />
-        )
-      )}
+      <main>
+        <Message>This page was successfuly loaded using CSR!</Message>
+        <section>
+          {data.map(
+            ({
+              id,
+              url,
+              name,
+              description,
+              primaryLanguage,
+              stargazerCount,
+              forkCount,
+            }) => (
+              <Card
+                key={id}
+                url={url}
+                name={name}
+                description={description}
+                primaryLanguage={primaryLanguage}
+                stargazerCount={stargazerCount}
+                forkCount={forkCount}
+              />
+            )
+          )}
+        </section>
+      </main>
     </>
   );
 };

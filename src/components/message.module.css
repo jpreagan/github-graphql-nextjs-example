@@ -1,0 +1,13 @@
+.message {
+  color: #24292f;
+  background-color: #dafbe1;
+  border-color: rgba(74, 194, 107, 0.4);
+  position: relative;
+  padding: 1.25rem 1rem;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin: 2rem 0;
+  line-height: 1.5;
+}
