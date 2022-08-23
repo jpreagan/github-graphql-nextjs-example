@@ -1,4 +1,5 @@
 import type { Repository } from "../types";
+import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import Card from "../components/card";
 
@@ -9,6 +10,11 @@ type SsgProps = {
 const Ssg = ({ data }: SsgProps) => {
   return (
     <>
+      <Head>
+        <title>Static site generation</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {data.map(
         ({
           id,

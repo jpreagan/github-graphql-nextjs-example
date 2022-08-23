@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import type { Repository } from "../types";
 import useSWR from "swr";
 import Card from "../components/card";
@@ -36,6 +37,11 @@ const Csr: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Client-side rendering</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {data.map(
         ({
           id,
