@@ -2,8 +2,9 @@ import type { Repository } from "../types";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import Header from "../components/header";
-import Message from "../components/message";
 import Card from "../components/card";
+import Message from "../components/message";
+import styles from "../styles/Home.module.css";
 
 type IsrProps = {
   data: Repository[];
@@ -13,15 +14,15 @@ const Isr = ({ data }: IsrProps) => {
   return (
     <>
       <Head>
-        <title>Incremental static regeneration</title>
+        <title>Incremental static generation</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
 
-      <main>
+      <main className={styles.container}>
         <Message>This page was successfuly loaded using ISR!</Message>
-        <section>
+        <section className={styles.grid}>
           {data.map(
             ({
               id,
@@ -92,7 +93,9 @@ export async function getStaticProps() {
   } = await client.request(query);
 
   return {
-    props: { data },
+    props: {
+      data,
+    },
     revalidate: 5,
   };
 }

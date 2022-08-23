@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import type { Repository } from "../types";
+import Head from "next/head";
 import useSWR from "swr";
 import Header from "../components/header";
-import Message from "../components/message";
 import Card from "../components/card";
+import Message from "../components/message";
+import styles from "../styles/Home.module.css";
 
 interface ApiError extends Error {
   info: any;
@@ -46,9 +47,9 @@ const Csr: NextPage = () => {
 
       <Header />
 
-      <main>
+      <main className={styles.container}>
         <Message>This page was successfuly loaded using CSR!</Message>
-        <section>
+        <section className={styles.grid}>
           {data.map(
             ({
               id,

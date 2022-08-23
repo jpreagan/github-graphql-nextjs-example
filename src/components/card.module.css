@@ -1,0 +1,45 @@
+.card {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  flex: 1 0 auto;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.meta {
+  margin-top: 0.5rem;
+}
+
+.language {
+  margin-right: 1rem;
+}
+
+.languageColor {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.stargazers,
+.forks {
+  color: inherit;
+}
+
+.forks {
+  margin-left: 1rem;
+}
+
+.stargazers:hover,
+.forks:hover {
+  color: #0969da;
+  text-decoration: none;
+}

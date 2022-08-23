@@ -2,8 +2,9 @@ import type { Repository } from "../types";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import Header from "../components/header";
-import Message from "../components/message";
 import Card from "../components/card";
+import Message from "../components/message";
+import styles from "../styles/Home.module.css";
 
 type HomeProps = {
   data: Repository[];
@@ -19,9 +20,9 @@ const Home = ({ data }: HomeProps) => {
 
       <Header />
 
-      <main>
+      <main className={styles.container}>
         <Message>This page was successfuly loaded using SSR!</Message>
-        <section>
+        <section className={styles.grid}>
           {data.map(
             ({
               id,

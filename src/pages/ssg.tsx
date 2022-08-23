@@ -2,8 +2,9 @@ import type { Repository } from "../types";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import Header from "../components/header";
-import Message from "../components/message";
 import Card from "../components/card";
+import Message from "../components/message";
+import styles from "../styles/Home.module.css";
 
 type SsgProps = {
   data: Repository[];
@@ -13,15 +14,15 @@ const Ssg = ({ data }: SsgProps) => {
   return (
     <>
       <Head>
-        <title>Static site generation</title>
+        <title>Static-site generation</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
 
-      <main>
+      <main className={styles.container}>
         <Message>This page was successfuly loaded using SSG!</Message>
-        <section>
+        <section className={styles.grid}>
           {data.map(
             ({
               id,
